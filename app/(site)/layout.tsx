@@ -1,9 +1,6 @@
 "use client"
 import { Box } from "@mui/material";
-import React, { useEffect } from "react";
-import { usePathname } from 'next/navigation'
-import { getToken } from "@/lib/utils/token-action";
-import { redirect } from 'next/navigation'
+import React from "react";
 import Drawer from "@/lib/components/molecules/Drawer";
 
 export default function Layout({ children }: { children: React.ReactNode }) {

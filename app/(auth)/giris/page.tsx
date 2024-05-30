@@ -13,15 +13,8 @@ export const metadata = {
 
 const page = () => {
   return (
-    <Stack
-      spacing={4}
-      width={"100vw"}
-      height={"100vh"}
-      display={"flex"}
-      alignItems={"center"}
-      justifyContent={"center"}
-    >
-      <Box sx={{ position: "relative", height: "200px", width: "200px" }}>
+    <React.Fragment>
+      <Box sx={{m:1, position: "relative", height: "200px", width: "200px" }}>
         <Image
           src={`${PUBLIC_URL}/rising-logo.webp`}
           alt="rising-logo"
@@ -31,16 +24,11 @@ const page = () => {
           }}
         />
       </Box>
-      <Stack spacing={2}>
-        <Typography variant="h5" fontWeight={500} textAlign={"center"}>
-          Hoş Geldiniz
-        </Typography>
-        <Typography variant="body1" textAlign={"center"}>
-          Rising Panel
-        </Typography>
-      </Stack>
+      <Typography component="h1" variant="h5" mb={3}>
+        Welcome
+      </Typography>
       <LoginForm />
-    </Stack>
+    </React.Fragment>
   );
 };
 

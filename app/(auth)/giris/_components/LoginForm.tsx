@@ -77,7 +77,7 @@ const LoginForm = () => {
   }
 
   return (
-    <Stack spacing={4}>
+    <Box>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         style={{ display: "flex", gap: 20, flexDirection: "column" }}
@@ -133,23 +133,24 @@ const LoginForm = () => {
           )}
         />
         <CustomButton type="submit" variant="contained" fullWidth>
-          Giriş Yap
+          Login
         </CustomButton>
       </form>
       <Stack
         direction={"row"}
         justifyContent={"space-between"}
         alignItems={"center"}
+        mt={1}
       >
         <FormGroup>
           <FormControlLabel
             onClick={handleRememberMeStatus}
             control={<Checkbox value="remember" color="primary" size="small" />}
-            label="Beni Hatırla"
+            label="Remember Me"
           />
         </FormGroup>
       </Stack>
-    </Stack>
+    </Box>
   );
 };
 
