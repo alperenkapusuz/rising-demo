@@ -1,11 +1,23 @@
 "use client";
-import { Container, Stack, Typography } from "@mui/material";
+import { Container, styled } from "@mui/material";
 import React, { useState } from "react";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import { Box } from "@mui/material";
+import { COLOR } from "@/lib/constants/color";
+
+
+const CustomTab = styled((props: any) => <Tab disableRipple {...props} />)(
+  () => ({
+    textTransform: 'none',
+    fontWeight: "500",
+    color: COLOR.text,
+    fontSize: "20px",
+  }),
+);
+
 
 const Layout = ({
   children,
@@ -25,22 +37,24 @@ const Layout = ({
   return (
     <React.Fragment>
       {children}
-      <TabContext value={value}>
+      <TabContext value={value} >
         <Box
           sx={{
-            borderBottom: 1,
-            borderColor: "divider",
+            borderBottom: `1px solid ${COLOR.border_primary}`,
+            mt: 3,
           }}
         >
+          <Container maxWidth="lg" sx={{marginRight: "117px"}}>
           <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="My Proxies" value="1" />
-            <Tab label="Dashboard" value="2" />
+            <CustomTab label="My Proxies" value="1" />
+            <CustomTab label="Dashboard" value="2" />
           </TabList>
+          </Container>
         </Box>
-        <TabPanel value="1" style={{ border: "1px solid red" }}>
+        <TabPanel value="1">
           {myProxies}
         </TabPanel>
-        <TabPanel value="2" style={{ border: "1px solid red" }}>
+        <TabPanel value="2">
           {dashboard}
         </TabPanel>
       </TabContext>
