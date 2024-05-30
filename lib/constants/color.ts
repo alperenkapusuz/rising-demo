@@ -2,6 +2,8 @@ export const COLOR = {
   
     primary: "rgba(120, 182, 255, 0.3)",
     secondary: "rgba(126, 134, 140, 1)",
+  
+    
     message: "rgba(120, 182, 255, 0.3)",
     
     text: "rgba(0, 0, 0, 1)",
@@ -15,6 +17,7 @@ export const COLOR = {
     border_primary: "rgba(230, 232, 235, 1)",
   
     bg_default: "rgba(247, 250, 252, 1)",
+    bg_secondary: "rgba(255, 255, 255, 1)",
 
     card_primary: "rgba(227, 245, 255, 1)",
     card_secondary: "rgba(229, 236, 246, 1)",
