@@ -3,9 +3,9 @@ import DashboardCard from './_components/DashboardCard'
 
 const page = () => {
   return (
-    <div>
+    <React.Fragment>
       <DashboardCard />
-    </div>
+    </React.Fragment>
   )
 }
 
