@@ -29,7 +29,7 @@ const injectToken = (
     const token = getToken();
     if (token != undefined && token != null) {
       config.headers = config.headers || {};
-      config.headers.Authorization = `Bearer ${token}`;
+      config.headers.Authorization = token;
     }
     return config;
   } catch (error: any) {

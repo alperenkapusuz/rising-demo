@@ -15,6 +15,9 @@ export const COLOR = {
     border_primary: "rgba(230, 232, 235, 1)",
   
     bg_default: "rgba(247, 250, 252, 1)",
+
+    card_primary: "rgba(227, 245, 255, 1)",
+    card_secondary: "rgba(229, 236, 246, 1)",
   
     success: "#1cc88a",
   

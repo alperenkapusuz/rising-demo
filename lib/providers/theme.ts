@@ -3,7 +3,7 @@ import { Hanken_Grotesk } from 'next/font/google';
 import { createTheme } from '@mui/material/styles';
 
 const HKGrotesk = Hanken_Grotesk({
-  weight: ['300', '400', '500', '700'],
+  weight: ['300', '400', '500', '700', "900"],
   subsets: ['latin'],
   display: 'swap',
 });

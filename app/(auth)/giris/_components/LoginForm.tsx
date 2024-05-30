@@ -63,12 +63,12 @@ const LoginForm = () => {
       console.log(data);
       if (!data?.jwt) return;
       setToken(data?.jwt, rememberMeStatus);
-      toastSuccess(data.message);
+      toastSuccess("Login Success");
       form.reset();
       router.push("/");
     },
     onError: (error: any) => {
-      toastError(error.data.message);
+      toastError("Login Failed");
     },
   });
 

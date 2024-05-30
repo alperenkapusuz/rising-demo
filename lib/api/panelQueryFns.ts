@@ -1,6 +1,7 @@
 import { http } from "../config/axios"
 import { END_POINTS } from "../constants/end-points"
 import { useQuery } from '@tanstack/react-query';
+import { IResponseInfo } from "../interface/panel/panel.response.interface";
 
 
 export const getTableFn = async () => {
@@ -16,7 +17,7 @@ export const useGetTable = () => {
 }
 
 export const getInfoFn = async () => {
-    const res = await http.GET(END_POINTS.PANEL.GET_INFO)
+    const res = await http.GET<IResponseInfo>(END_POINTS.PANEL.GET_INFO)
     return res.data
 }
 

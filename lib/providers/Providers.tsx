@@ -4,6 +4,8 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const queryClient = new QueryClient();
 
@@ -18,7 +20,10 @@ const Providers = (props: { children: React.ReactNode }) => {
   return (
     <QueryClientProvider client={queryClient}>
       <AppRouterCacheProvider>
-        <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <ToastContainer />
+          {props.children}
+        </ThemeProvider>
       </AppRouterCacheProvider>
     </QueryClientProvider>
   );

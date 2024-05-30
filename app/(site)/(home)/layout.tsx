@@ -8,16 +8,14 @@ import TabPanel from "@mui/lab/TabPanel";
 import { Box } from "@mui/material";
 import { COLOR } from "@/lib/constants/color";
 
-
 const CustomTab = styled((props: any) => <Tab disableRipple {...props} />)(
   () => ({
-    textTransform: 'none',
+    textTransform: "none",
     fontWeight: "500",
     color: COLOR.text,
     fontSize: "20px",
-  }),
+  })
 );
-
 
 const Layout = ({
   children,
@@ -37,26 +35,22 @@ const Layout = ({
   return (
     <React.Fragment>
       {children}
-      <TabContext value={value} >
+      <TabContext value={value}>
         <Box
           sx={{
             borderBottom: `1px solid ${COLOR.border_primary}`,
             mt: 3,
           }}
         >
-          <Container maxWidth="lg" sx={{marginRight: "117px"}}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <CustomTab label="My Proxies" value="1" />
-            <CustomTab label="Dashboard" value="2" />
-          </TabList>
+          <Container maxWidth="lg">
+            <TabList onChange={handleChange} aria-label="lab API tabs example">
+              <CustomTab label="My Proxies" value="1" />
+              <CustomTab label="Dashboard" value="2" />
+            </TabList>
           </Container>
         </Box>
-        <TabPanel value="1">
-          {myProxies}
-        </TabPanel>
-        <TabPanel value="2">
-          {dashboard}
-        </TabPanel>
+        <TabPanel value="1">{myProxies}</TabPanel>
+        <TabPanel value="2">{dashboard}</TabPanel>
       </TabContext>
     </React.Fragment>
   );
