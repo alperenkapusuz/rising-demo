@@ -8,6 +8,7 @@ export const COLOR = {
     
     text: "rgba(0, 0, 0, 1)",
     text_secondary: "rgba(28, 28, 28, 1)",
+    text_tertiary: "rgba(64, 64, 64, 1)",
   
     hover: "rgba(12, 109, 252, 1)",
     hover_bg: "rgba(120, 182, 255, 0.2)",

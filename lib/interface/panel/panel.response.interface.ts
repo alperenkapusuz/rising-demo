@@ -15,3 +15,15 @@ export interface ICard {
     value: ReactNode  | undefined  | string;
 }
 
+export interface ITableData<T = any> {
+    data?: T;
+}
+export interface IResponseTable {
+    type: string;
+    location: string;
+    rental: string;
+    ipcount: string;
+    purpose: string;
+    date: string;
+}
+
