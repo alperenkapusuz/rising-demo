@@ -1,18 +1,18 @@
 export const COLOR = {
-    primary: "#36b9cc",
-    secondary: "#f8f9fc",
   
-    text: "#5a5c69",
-    text_secondary: "#858796",
+    primary: "rgba(120, 182, 255, 0.3)",
+
+    text: "rgba(0, 0, 0, 1)",
+    text_secondary: "rgba(28, 28, 28, 1)",
   
-    hover: "#36b9bb",
-    hover_secondary: "#f8f9fa",
+    hover: "rgba(12, 109, 252, 1)",
+    hover_bg: "rgba(120, 182, 255, 0.2)",
+    hover_secondary: "rgba(252, 12, 12, 1)",
+    hover_bg_secondary: "rgba(255, 120, 120, 0.2)",
+
+    border_primary: "rgba(230, 232, 235, 1)",
   
-    border_secondary: "#B4B2B1",
-    border_primary: "#e4e2e0",
-  
-    bg_default: "#f8f9fc",
-    bg_secondary: "#EAECF4",
+    bg_default: "rgba(247, 250, 252, 1)",
   
     success: "#1cc88a",
   
