@@ -17,8 +17,9 @@ import PaymentRoundedIcon from "@mui/icons-material/PaymentRounded";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
+import OfferMessage from "../atoms/OfferMessage";
 
-const drawerWidth = 240;
+const drawerWidth = 100;
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
@@ -35,11 +36,11 @@ const closedMixin = (theme: Theme): CSSObject => ({
     duration: theme.transitions.duration.leavingScreen,
   }),
   overflowX: "hidden",
-  width: `calc(100px)`,
+  width: `calc(${drawerWidth}px)`,
   backgroundColor: COLOR.bg_default,
   borderRight: `2px solid ${COLOR.border_primary}`,
   [theme.breakpoints.up("sm")]: {
-    width: `calc(100px)`,
+    width: `calc(${drawerWidth}px)`,
   },
 });
 
@@ -115,7 +116,7 @@ export default function MiniDrawer({
 
   return (
     <React.Fragment>
-      <Box sx={{}}>
+      <Box sx={{display:"flex"}}>
         <Drawer variant="permanent" open={false} >
           <DrawerHeader
             sx={{
@@ -187,9 +188,9 @@ export default function MiniDrawer({
                   height: "60px",
                   borderRadius: "20px",
                   "&:hover": {
-                    backgroundColor: COLOR.hover_secondary,
+                    backgroundColor: COLOR.hover_bg_secondary,
                     "& .MuiSvgIcon-root": {
-                      color:  COLOR.hover_bg_secondary,
+                      color:  COLOR.hover_secondary,
                     },
                   },
                 }}
