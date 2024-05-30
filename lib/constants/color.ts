@@ -1,7 +1,9 @@
 export const COLOR = {
   
     primary: "rgba(120, 182, 255, 0.3)",
-
+    secondary: "rgba(126, 134, 140, 1)",
+    message: "rgba(120, 182, 255, 0.3)",
+    
     text: "rgba(0, 0, 0, 1)",
     text_secondary: "rgba(28, 28, 28, 1)",
   

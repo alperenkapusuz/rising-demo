@@ -9,7 +9,7 @@ import { COLOR } from "@/lib/constants/color";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { deleteToken } from "@/lib/utils/token-action";
 import CustomModal from "../atoms/CustomModal";
-import { IconButton } from "@mui/material";
+import { Container, IconButton } from "@mui/material";
 import Image from "next/image";
 import { PUBLIC_URL } from "@/lib/config/env";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
@@ -116,8 +116,8 @@ export default function MiniDrawer({
 
   return (
     <React.Fragment>
-      <Box sx={{display:"flex"}}>
-        <Drawer variant="permanent" open={false} >
+      <Box sx={{ display: "flex" }}>
+        <Drawer variant="permanent" open={false}>
           <DrawerHeader
             sx={{
               display: "flex",
@@ -155,14 +155,9 @@ export default function MiniDrawer({
                     height: "60px",
                     borderRadius: "20px",
                     backgroundColor:
-                      pathname === item.href
-                        ? COLOR.hover_bg
-                        : "transparent",
+                      pathname === item.href ? COLOR.hover_bg : "transparent",
                     "& .MuiSvgIcon-root": {
-                      color:
-                        pathname === item.href
-                          ? COLOR.hover
-                          : "inherit",
+                      color: pathname === item.href ? COLOR.hover : "inherit",
                     },
                     "&:hover": {
                       backgroundColor: COLOR.hover_bg,
@@ -190,7 +185,7 @@ export default function MiniDrawer({
                   "&:hover": {
                     backgroundColor: COLOR.hover_bg_secondary,
                     "& .MuiSvgIcon-root": {
-                      color:  COLOR.hover_secondary,
+                      color: COLOR.hover_secondary,
                     },
                   },
                 }}
@@ -210,6 +205,7 @@ export default function MiniDrawer({
             overflow: "auto",
           }}
         >
+          <OfferMessage />
           {children}
         </Box>
       </Box>

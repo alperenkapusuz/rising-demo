@@ -1,8 +1,20 @@
+import { Container, Stack, Typography } from '@mui/material'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <Container maxWidth="lg">
+    <Stack mt={6}>
+      <Typography
+        fontSize={"30px"}
+        lineHeight={"40px"}
+        fontWeight={"700"}
+        gutterBottom
+      >
+        Proxies & Scraping Infrastructure
+      </Typography>
+    </Stack>
+  </Container>
   )
 }
 
