@@ -25,5 +25,6 @@ export const useGetInfo = () => {
     return useQuery({
         queryKey: [END_POINTS.PANEL.GET_INFO],
         queryFn: getInfoFn,
+        staleTime: 1000 * 60 * 5,
     })
 }

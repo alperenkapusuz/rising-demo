@@ -12,18 +12,25 @@ type Props = {
 const CustomCard = (props: Props) => {
   return (
     <Box
-        sx={{
-            backgroundColor: props.bgColor == "blue" ? COLOR.card_primary : COLOR.card_secondary,
-            borderRadius: "16px",
-            paddingY: "24px",
-            paddingLeft: "22px",
-        }}
+      sx={{
+        backgroundColor:
+          props.bgColor == "blue" ? COLOR.card_primary : COLOR.card_secondary,
+        borderRadius: "16px",
+        paddingY: "24px",
+        paddingLeft: "22px",
+      }}
     >
       <Typography
         fontSize={"14px"}
         lineHeight={"20px"}
         mb={"8px"}
         color={COLOR.text_secondary}
+        sx={{
+          display: "-webkit-box",
+          overflow: "hidden",
+          WebkitBoxOrient: "vertical",
+          WebkitLineClamp: 1,
+        }}
         fontWeight={props.fontWeight == "medium" ? "600" : "900"}
       >
         {props.title}
@@ -32,6 +39,12 @@ const CustomCard = (props: Props) => {
         fontWeight={props.fontWeight == "medium" ? "500" : "900"}
         fontSize={"24px"}
         color={COLOR.text_secondary}
+        sx={{
+          display: "-webkit-box",
+          overflow: "hidden",
+          WebkitBoxOrient: "vertical",
+          WebkitLineClamp: 1,
+        }}
         lineHeight={"36px"}
       >
         {props.value}
