@@ -102,7 +102,7 @@ export default function MiniDrawer({
   const [exitModal, setExitModal] = useState(false);
 
   const handleLogout = () => {
-    router.push("/giris/");
+    router.push("/login/");
     deleteToken();
   };
 

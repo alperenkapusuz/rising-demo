@@ -10,11 +10,11 @@ export function middleware(req: NextRequest) {
 
   if (token && pathname === '/') {
     return NextResponse.next();
-  } else if (!token && pathname === '/giris/') {
+  } else if (!token && pathname === '/login/') {
     return NextResponse.next();
-  } else if (token  && pathname === '/giris/') {
+  } else if (token  && pathname === '/login/') {
     return NextResponse.redirect(`${req.nextUrl.origin}/`);
   } else if(!token && pathname === '/') {
-    return NextResponse.redirect(`${req.nextUrl.origin}/giris/`);
+    return NextResponse.redirect(`${req.nextUrl.origin}/login/`);
   }
 }

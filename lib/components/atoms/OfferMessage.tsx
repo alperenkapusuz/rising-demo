@@ -7,26 +7,27 @@ import Link from 'next/link';
 import { COLOR } from '@/lib/constants/color';
 import { Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
+import { load } from '@/lib/utils/session-load-action';
 
-function load(key:string) {
-  const item = window.sessionStorage.getItem(key);
-  return item != null ? JSON.parse(item) : [];
-}
 
 const StickyAlert = () => {
 
   const [alertVisible, setAlertVisible] = useState(() => load('alertVisible'));
 
   useEffect(() => {
-    const alertState = window.sessionStorage.getItem('alertVisible');
-    if (alertState !== null) {
-      setAlertVisible(alertState === 'true');
+    if (typeof window !== "undefined") {
+      const alertState = sessionStorage.getItem('alertVisible');
+      if (alertState !== null) {
+        setAlertVisible(alertState === 'true');
+      }
     }
+
   }, []);
 
   const handleClose = () => {
     setAlertVisible(false);
-    window.sessionStorage.setItem('alertVisible', 'false');
+    if (typeof window !== "undefined") { sessionStorage.setItem('alertVisible', 'false');}
+   
   };
 
     return (
