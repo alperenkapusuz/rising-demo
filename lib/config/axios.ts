@@ -60,7 +60,7 @@ class Http {
       (response) => response,
       (error) => {
         const { response } = error;
-        return this.handleError(response);
+        return response
       }
     );
 
@@ -104,27 +104,6 @@ class Http {
     return this.http.delete<T, R>(url, config);
   }
 
-  private handleError(error: AxiosError) {
-    switch (error.status) {
-      case StatusCode.InternalServerError: {
-        toastError("Sunucu hatası oluştu. Lütfen daha sonra tekrar deneyiniz.");
-        break;
-    }
-      case StatusCode.Forbidden: {
-        toastError("Bu işlemi yapmaya yetkiniz bulunmamaktadır.");
-        deleteToken();
-        break;
-      }
-      case StatusCode.Unauthorized: {
-        toastError("Bu işlemi yapmaya yetkiniz bulunmamaktadır.");
-        break;}
-      case StatusCode.TooManyRequests: {
-        toastError("Çok fazla istek gönderdiniz. Lütfen daha sonra tekrar deneyiniz.");
-        break;}
-    }
-
-    return Promise.reject(error);
-  }
 }
 
 export const http = new Http();

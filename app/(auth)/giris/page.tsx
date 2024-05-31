@@ -14,7 +14,7 @@ export const metadata = {
 const page = () => {
   return (
     <React.Fragment>
-      <Box sx={{m:1, position: "relative", height: "200px", width: "200px" }}>
+      <Box sx={{position: "relative", height: "100px", width: "100px" }}>
         <Image
           src={`${PUBLIC_URL}/rising-logo.webp`}
           alt="rising-logo"
@@ -24,7 +24,7 @@ const page = () => {
           }}
         />
       </Box>
-      <Typography component="h1" variant="h5" mb={3}>
+      <Typography component="h1" variant="h5" mb={2}>
         Welcome
       </Typography>
       <LoginForm />

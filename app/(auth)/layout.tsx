@@ -8,14 +8,26 @@ export default function ApplicantLayout({
 }) {
   return (
     <React.Fragment>
-      <Container component="main" maxWidth="xs">
+      <Container
+        component="main"
+        maxWidth="xs"
+        sx={{
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
         <CssBaseline />
         <Box
           sx={{
-            paddingTop: 8,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            padding: 4,
+            borderRadius: 3,
+            boxShadow:
+              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
           }}
         >
           {children}

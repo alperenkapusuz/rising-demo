@@ -48,12 +48,14 @@ const ActionsMenu = ({ params }: { params: GridRenderCellParams }) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = (action: string) => {
+  const handleClose = () => {
     setAnchorEl(null);
-    if (action) {
-      console.log("Number of IP:", params.row.ipcount);
-      toastWarning("Number of IP: " + params.row.ipcount);
-    }
+  };
+
+  const handleAction = () => {
+    setAnchorEl(null);
+    toastWarning("Number of IP" + params.row.ipcount);
+    console.log("Number of IP" + params.row.ipcount);
   };
 
   return (
@@ -85,7 +87,7 @@ const ActionsMenu = ({ params }: { params: GridRenderCellParams }) => {
       </Button>
       <StyledMenu anchorEl={anchorEl} open={open} onClose={handleClose}>
       <MenuItem
-          onClick={() => handleClose("Processing")}
+          onClick={handleAction}
           disableRipple
           disableGutters
           sx={{
@@ -97,7 +99,7 @@ const ActionsMenu = ({ params }: { params: GridRenderCellParams }) => {
           Processing
         </MenuItem>
         <MenuItem
-          onClick={() => handleClose("In Progress")}
+          onClick={handleAction}
           disableRipple
           disableGutters
           sx={{
@@ -109,7 +111,7 @@ const ActionsMenu = ({ params }: { params: GridRenderCellParams }) => {
           In Progress
         </MenuItem>
         <MenuItem
-          onClick={() => handleClose("Completed")}
+          onClick={handleAction}
           disableRipple
           disableGutters
           sx={{

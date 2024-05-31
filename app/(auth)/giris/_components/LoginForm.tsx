@@ -60,8 +60,10 @@ const LoginForm = () => {
   const { mutate: login } = useMutation({
     mutationFn: postLoginFn,
     onSuccess: (data) => {
-      console.log(data);
-      if (!data?.jwt) return;
+      if (!data?.jwt) {
+        toastError(data.message);
+        return;
+      }
       setToken(data?.jwt, rememberMeStatus);
       toastSuccess("Login Success");
       form.reset();
@@ -78,10 +80,7 @@ const LoginForm = () => {
 
   return (
     <Box>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        style={{ display: "flex", gap: 20, flexDirection: "column" }}
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)}>
         <Controller
           name="username"
           control={form.control}
@@ -94,6 +93,7 @@ const LoginForm = () => {
               size="small"
               error={!!form.formState.errors.username}
               helperText={form.formState.errors.username?.message}
+              sx={{mb: 2}}
             />
           )}
         />
@@ -110,7 +110,9 @@ const LoginForm = () => {
                 placeholder="Şifre"
                 size="small"
                 margin="none"
+                fullWidth
                 error={!!form.formState.errors.password}
+                sx={{mb: 2}}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
@@ -140,7 +142,7 @@ const LoginForm = () => {
         direction={"row"}
         justifyContent={"space-between"}
         alignItems={"center"}
-        mt={1}
+        sx={{mt: 2}}
       >
         <FormGroup>
           <FormControlLabel
