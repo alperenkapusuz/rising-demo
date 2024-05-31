@@ -9,7 +9,7 @@ import { COLOR } from "@/lib/constants/color";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { deleteToken } from "@/lib/utils/token-action";
 import CustomModal from "../atoms/CustomModal";
-import { Container, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import Image from "next/image";
 import { PUBLIC_URL } from "@/lib/config/env";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";

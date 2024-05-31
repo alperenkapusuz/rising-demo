@@ -1,13 +1,11 @@
 import { API_URL } from "@/lib/config/env";
-import { deleteToken, getToken } from "@/lib/utils/token-action";
+import {getToken } from "@/lib/utils/token-action";
 import axios, {
-  AxiosError,
   AxiosInstance,
   AxiosRequestConfig,
   AxiosResponse,
   InternalAxiosRequestConfig,
 } from "axios";
-import { toastError } from "../utils/toast-message";
 
 
 enum StatusCode {
@@ -68,12 +66,6 @@ class Http {
     return http;
   }
 
-  REQUEST<T = any, R = AxiosResponse<T>>(
-    config: AxiosRequestConfig
-  ): Promise<R> {
-    return this.http.request(config);
-  }
-
   GET<T = any, R = AxiosResponse<T>>(
     url: string,
     config?: AxiosRequestConfig
@@ -87,21 +79,6 @@ class Http {
     config?: AxiosRequestConfig
   ): Promise<R> {
     return this.http.post<T, R>(url, data, config);
-  }
-
-  PUT<T = any, R = AxiosResponse<T>>(
-    url: string,
-    data?: any,
-    config?: AxiosRequestConfig
-  ): Promise<R> {
-    return this.http.put<T, R>(url, data, config);
-  }
-
-  DELETE<T = any, R = AxiosResponse<T>>(
-    url: string,
-    config?: AxiosRequestConfig
-  ): Promise<R> {
-    return this.http.delete<T, R>(url, config);
   }
 
 }
