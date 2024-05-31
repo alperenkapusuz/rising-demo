@@ -1,33 +1,60 @@
+"use client";
 import Container from '@mui/material/Container';
 import Alert from '@mui/material/Alert';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Link from 'next/link';
 import { COLOR } from '@/lib/constants/color';
+import { Typography } from '@mui/material';
+import { useEffect, useState } from 'react';
+
+function load(key:string) {
+  const item = window.sessionStorage.getItem(key);
+  return item != null ? JSON.parse(item) : [];
+}
 
 const StickyAlert = () => {
-  return (
-    <Container maxWidth="lg" sx={{ position: "sticky", top: 0, zIndex: 999 }}>
-      <Alert
-        icon={false}
-        action={
-          <IconButton aria-label="close" color="inherit" size="small">
-            <CloseIcon fontSize="inherit" sx={{ color: COLOR.secondary }} />
-          </IconButton>
-        }
-        sx={{
-          bgcolor: COLOR.message,
-          fontSize: "14px",
-        }}
-      >
-        Special Offer! Get Complete Free Proxy 10 MB Proxy, without credit card.{" "}
-        <Link href={"/"} style={{ color: "black" }}>
-          {" "}
-          Start Free Trial{" "}
-        </Link>
-      </Alert>
-    </Container>
-  );
+
+  const [alertVisible, setAlertVisible] = useState(() => load('alertVisible'));
+
+  useEffect(() => {
+    const alertState = window.sessionStorage.getItem('alertVisible');
+    if (alertState !== null) {
+      setAlertVisible(alertState === 'true');
+    }
+  }, []);
+
+  const handleClose = () => {
+    setAlertVisible(false);
+    window.sessionStorage.setItem('alertVisible', 'false');
+  };
+
+    return (
+      alertVisible  && (
+        <Container maxWidth="lg" sx={{ position: "sticky", top: 0, zIndex: 999 }}>
+          <Alert
+            icon={false}
+            action={
+              <IconButton aria-label="close" color="inherit" size="small" onClick={handleClose}>
+                <CloseIcon fontSize="inherit" sx={{ color: COLOR.secondary }} />
+              </IconButton>
+            }
+            sx={{
+              bgcolor: COLOR.message,
+              fontSize: "14px",
+            }}
+          >
+            <Typography variant="body1" sx={{ fontWeight: "500", fontSize: "14px", color: "black" }}>
+              Special Offer! Get Complete Free Proxy 10 MB Proxy, without credit card.{" "}
+              <Link href={"/"} style={{ color: "black" }}>
+                {" "}
+                Start Free Trial{" "}
+              </Link>
+            </Typography>
+          </Alert>
+        </Container>
+      )
+    );
 };
 
 export default StickyAlert;
