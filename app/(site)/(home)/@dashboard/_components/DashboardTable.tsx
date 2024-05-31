@@ -54,8 +54,8 @@ const ActionsMenu = ({ params }: { params: GridRenderCellParams }) => {
 
   const handleAction = () => {
     setAnchorEl(null);
-    toastWarning("Number of IP" + params.row.ipcount);
-    console.log("Number of IP" + params.row.ipcount);
+    toastWarning("Number of IP => " + params.row.ipcount);
+    console.log("Number of IP => " + params.row.ipcount);
   };
 
   return (

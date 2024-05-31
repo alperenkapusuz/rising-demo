@@ -126,7 +126,7 @@ export default function MiniDrawer({
               paddingTop: "20px",
             }}
           >
-            <IconButton>
+            <IconButton onClick={() => router.push("/")}>
               <Image
                 src={`${PUBLIC_URL}/rising-logo.webp`}
                 alt="rising-logo"
