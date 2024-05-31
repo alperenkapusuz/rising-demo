@@ -211,12 +211,12 @@ export default function MiniDrawer({
       </Box>
       <CustomModal
         modalType="WARNING"
-        title="Emin misiniz ?"
-        description="Çıkış yapmak istediğinize emin misiniz?"
+        title="Are you sure ?"
+        description="Are you sure you want to log out?"
         open={exitModal}
         handleClose={handleExitClose}
         handleAction={handleLogout}
-        buttonText="Çıkış Yap"
+        buttonText="Exit"
       />
     </React.Fragment>
   );

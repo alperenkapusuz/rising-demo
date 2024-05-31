@@ -1,8 +1,8 @@
+"use client"
 import React from "react";
-import { Box } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
+import { Box, LinearProgress } from "@mui/material";
+import { DataGrid, GridSlots } from "@mui/x-data-grid";
 import { styled } from "@mui/material/styles";
-import SwapVertIcon from "@mui/icons-material/SwapVert";
 
 const StyledGridOverlay = styled("div")(({ theme }) => ({
   display: "flex",
@@ -10,13 +10,25 @@ const StyledGridOverlay = styled("div")(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   height: "100%",
+  "& .ant-empty-img-1": {
+    fill: theme.palette.mode === "light" ? "#aeb8c2" : "#262626",
+  },
+  "& .ant-empty-img-2": {
+    fill: theme.palette.mode === "light" ? "#f5f5f7" : "#595959",
+  },
+  "& .ant-empty-img-3": {
+    fill: theme.palette.mode === "light" ? "#dce0e6" : "#434343",
+  },
+  "& .ant-empty-img-4": {
+    fill: theme.palette.mode === "light" ? "#fff" : "#1c1c1c",
+  },
+  "& .ant-empty-img-5": {
+    fillOpacity: theme.palette.mode === "light" ? "0.8" : "0.08",
+    fill: theme.palette.mode === "light" ? "#f5f5f5" : "#fff",
+  },
 }));
 
-export function UnsortedIcon() {
-  return <SwapVertIcon className="icon" />;
-}
-
-export function CustomNoRowsOverlay() {
+function CustomNoRowsOverlay() {
   return (
     <StyledGridOverlay>
       <svg
@@ -58,7 +70,7 @@ export function CustomNoRowsOverlay() {
           </g>
         </g>
       </svg>
-      <Box sx={{ mt: 1 }}>Veri Yok</Box>
+      <Box sx={{ mt: 1 }}>No Rows</Box>
     </StyledGridOverlay>
   );
 }
@@ -70,25 +82,40 @@ type Props = {
 const CustomDataGrid = (
   props: Omit<React.ComponentProps<typeof DataGrid>, "classes"> & Props
 ) => {
-
   if (props.dataStatus)
     return (
-      <DataGrid
-        rows={[]}
-        columns={props.columns}
-        classes={{ root: "my-root-class" }}
-        hideFooterPagination
-        hideFooter
-      />
+      <div style={{ height: 400, width: "100%" }}>
+        <DataGrid
+          slots={{
+            loadingOverlay: LinearProgress as GridSlots["loadingOverlay"],
+          }}
+          rows={[]}
+          columns={props.columns}
+          hideFooterPagination
+          hideFooter
+          loading
+          sx={{
+            border: "none",
+          }}
+        />
+      </div>
     );
 
   return (
-    <DataGrid
-      {...props}
-      hideFooterPagination
-      hideFooter
-      disableColumnMenu
-    />
+    <div style={{ height: 350, width: "100%" }}>
+      <DataGrid
+        slots={{
+          noRowsOverlay: CustomNoRowsOverlay,
+        }}
+        {...props}
+        hideFooterPagination
+        hideFooter
+        disableColumnMenu
+        sx={{
+          border: "none",
+        }}
+      />
+    </div>
   );
 };
 

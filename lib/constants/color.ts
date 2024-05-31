@@ -14,6 +14,7 @@ export const COLOR = {
     hover_bg: "rgba(120, 182, 255, 0.2)",
     hover_secondary: "rgba(252, 12, 12, 1)",
     hover_bg_secondary: "rgba(255, 120, 120, 0.2)",
+    hover_tertiary: "rgba(67, 89, 202, 1)",
 
     border_primary: "rgba(230, 232, 235, 1)",
   
