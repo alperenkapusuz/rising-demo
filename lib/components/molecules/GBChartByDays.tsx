@@ -1,6 +1,7 @@
 import React from 'react';
 import { LineChart } from '@mui/x-charts/LineChart';
 import { COLOR } from '@/lib/constants/color';
+import { InterFont } from '@/lib/providers/theme';
 
 type GBChartByDaysProps = {
   gbData: Array<number>;
@@ -35,15 +36,15 @@ const GBChartByDays = (props: GBChartByDaysProps) => {
         fill:"rgba(0, 0, 0, 0.4)",
         fontSize: "12px",
         fontWeight: "400",
-        fontFamily: "Inter",
+        fontFamily: InterFont.style.fontFamily,
        },
        "& .MuiChartsAxis-tickContainer .MuiChartsAxis-tickLabel":{
-           fontFamily: "Inter",
+           fontFamily: InterFont.style.fontFamily,
         },
         "& .MuiChartsAxis-bottom .MuiChartsAxis-tickLabel":{
             strokeWidth:"0.5",
             fill:"rgba(0, 0, 0, 0.4)",
-            fontFamily: "Inter",
+            fontFamily: InterFont.style.fontFamily,
          },
          "& .MuiChartsAxis-bottom .MuiChartsAxis-line":{
           stroke:"rgba(0, 0, 0, 0.2)",
