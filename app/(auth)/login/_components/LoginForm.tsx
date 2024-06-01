@@ -1,13 +1,13 @@
-"use client";
-import React, { useState } from "react";
-import * as z from "zod";
-import { Controller, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/navigation";
-import { useMutation } from "@tanstack/react-query";
-import { postLoginFn } from "@/lib/api/authQueryFns";
-import { setToken } from "@/lib/utils/token-action";
-import { toastError, toastSuccess } from "@/lib/utils/toast-message";
+'use client';
+import React, { useState } from 'react';
+import * as z from 'zod';
+import { Controller, useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useRouter } from 'next/navigation';
+import { useMutation } from '@tanstack/react-query';
+import { postLoginFn } from '@/lib/api/authQueryFns';
+import { setToken } from '@/lib/utils/token-action';
+import { toastError, toastSuccess } from '@/lib/utils/toast-message';
 import {
   Box,
   Checkbox,
@@ -18,19 +18,15 @@ import {
   InputAdornment,
   OutlinedInput,
   Stack,
-} from "@mui/material";
-import CustomInput from "@/lib/components/atoms/CustomInput";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import CustomButton from "@/lib/components/atoms/CustomButton";
+} from '@mui/material';
+import CustomInput from '@/lib/components/atoms/CustomInput';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import CustomButton from '@/lib/components/atoms/CustomButton';
 
 export const formSchema = z.object({
-  username: z
-    .string()
-    .min(1, { message: "Bu alanın doldurulması zorunludur." }),
-  password: z
-    .string()
-    .min(1, { message: "Bu alanın doldurulması zorunludur." }),
+  username: z.string().min(1, { message: 'Bu alanın doldurulması zorunludur.' }),
+  password: z.string().min(1, { message: 'Bu alanın doldurulması zorunludur.' }),
 });
 
 const LoginForm = () => {
@@ -41,14 +37,12 @@ const LoginForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
-      password: "",
+      username: '',
+      password: '',
     },
   });
 
-  const handleMouseDownPassword = (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
+  const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
   };
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -65,12 +59,12 @@ const LoginForm = () => {
         return;
       }
       setToken(data?.jwt, rememberMeStatus);
-      toastSuccess("Login Success");
+      toastSuccess('Login Success');
       form.reset();
-      router.push("/");
+      router.push('/');
     },
     onError: (error: any) => {
-      toastError("Login Failed");
+      toastError('Login Failed');
     },
   });
 
@@ -93,7 +87,7 @@ const LoginForm = () => {
               size="small"
               error={!!form.formState.errors.username}
               helperText={form.formState.errors.username?.message}
-              sx={{mb: 2}}
+              sx={{ mb: 2 }}
             />
           )}
         />
@@ -106,13 +100,13 @@ const LoginForm = () => {
                 {...field}
                 inputRef={ref}
                 id="outlined-adornment-password"
-                type={showPassword ? "text" : "password"}
+                type={showPassword ? 'text' : 'password'}
                 placeholder="Şifre"
                 size="small"
                 margin="none"
                 fullWidth
                 error={!!form.formState.errors.password}
-                sx={{mb: 2}}
+                sx={{ mb: 2 }}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
@@ -127,7 +121,7 @@ const LoginForm = () => {
                 }
               />
               {form.formState.errors.password && (
-                <FormHelperText sx={{ mt: "-15px", ml: "15px" }} error>
+                <FormHelperText sx={{ mt: '-15px', ml: '15px' }} error>
                   {form.formState.errors.password.message}
                 </FormHelperText>
               )}
@@ -138,12 +132,7 @@ const LoginForm = () => {
           Login
         </CustomButton>
       </form>
-      <Stack
-        direction={"row"}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-        sx={{mt: 2}}
-      >
+      <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'} sx={{ mt: 2 }}>
         <FormGroup>
           <FormControlLabel
             onClick={handleRememberMeStatus}

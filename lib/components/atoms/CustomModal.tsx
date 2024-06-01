@@ -158,7 +158,7 @@ const ConfirmModal = (props: Props) => {
             position: 'absolute',
             right: 8,
             top: 8,
-            color: "text.primary"
+            color: 'text.primary',
           }}
         >
           <CloseIcon />

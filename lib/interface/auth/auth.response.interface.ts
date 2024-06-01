@@ -1,5 +1,5 @@
 export interface IResponseAuth {
-    jwt: string;
-    message: string;
-    status: number;
-} 
+  jwt: string;
+  message: string;
+  status: number;
+}

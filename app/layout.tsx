@@ -1,6 +1,6 @@
-import { COLOR } from "@/lib/constants/color";
-import Providers from "@/lib/providers/Providers";
-import { Box, CssBaseline } from "@mui/material";
+import { COLOR } from '@/lib/constants/color';
+import Providers from '@/lib/providers/Providers';
+import { Box, CssBaseline } from '@mui/material';
 
 export default function RootLayout({
   children,
@@ -11,7 +11,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <Box sx={{ minHeight: "100vh", width: "100%", backgroundColor: COLOR.bg_default }}>
+          <Box sx={{ minHeight: '100vh', width: '100%', backgroundColor: COLOR.bg_default }}>
             <CssBaseline />
             {children}
           </Box>
