@@ -9,6 +9,7 @@ export const getTableFn = async () => {
   return res.data;
 };
 
+//is the function that fetches table data
 export const useGetTable = () => {
   return useQuery({
     queryKey: [END_POINTS.PANEL.GET_TABLE],
@@ -23,6 +24,7 @@ export const getInfoFn = async () => {
   return res.data;
 };
 
+//It is the function that fetches info data
 export const useGetInfo = () => {
   return useQuery({
     queryKey: [END_POINTS.PANEL.GET_INFO],

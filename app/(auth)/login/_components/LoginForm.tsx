@@ -24,9 +24,10 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import CustomButton from '@/lib/components/atoms/CustomButton';
 
+//Error message handling with Zod library
 export const formSchema = z.object({
-  username: z.string().min(1, { message: 'Bu alanın doldurulması zorunludur.' }),
-  password: z.string().min(1, { message: 'Bu alanın doldurulması zorunludur.' }),
+  username: z.string().min(1, { message: 'This field is mandatory.' }),
+  password: z.string().min(1, { message: 'This field is mandatory.' }),
 });
 
 const LoginForm = () => {
@@ -51,6 +52,7 @@ const LoginForm = () => {
     setRememberMeStatus((status) => !status);
   };
 
+  //Login process request throwing process
   const { mutate: login } = useMutation({
     mutationFn: postLoginFn,
     onSuccess: (data) => {

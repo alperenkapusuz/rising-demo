@@ -1,6 +1,8 @@
 'use client';
 import { toast } from 'react-toastify';
 
+//Toast messages are setting functions
+
 export const toastSuccess = (message: string) => {
   return toast.success(message, {
     position: 'top-right',

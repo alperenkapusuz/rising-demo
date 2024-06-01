@@ -2,13 +2,6 @@ import { API_URL } from '@/lib/config/env';
 import { getToken } from '@/lib/utils/token-action';
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 
-enum StatusCode {
-  Unauthorized = 401,
-  Forbidden = 403,
-  TooManyRequests = 429,
-  InternalServerError = 500,
-}
-
 const headers: Readonly<Record<string, string | boolean>> = {
   'Content-Type': 'application/json',
   'Accept-Language': 'tr',
