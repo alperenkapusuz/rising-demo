@@ -46,7 +46,7 @@ const DashboardCard = () => {
     {
       title: 'Subscription expires on',
       value: `${dailyUsage} GB`,
-      bgColor: 'blue',
+      bgColor: 'gray',
       fontWeight: 'bold',
     },
   ];

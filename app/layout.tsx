@@ -9,7 +9,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body suppressHydrationWarning={true}>
         <Providers>
           <Box sx={{ minHeight: '100vh', width: '100%', backgroundColor: COLOR.bg_default }}>
             <CssBaseline />

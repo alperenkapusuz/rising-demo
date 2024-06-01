@@ -31,7 +31,12 @@ const GBChartByDays = (props: GBChartByDaysProps) => {
   return (
     <LineChart
       {...lineChartsParams}
-      sx={{
+      sx={
+        {
+
+"& .MuiChartsGrid-line": {
+  stroke: "rgba(0, 0, 0, 0.05)",
+},
        "& .MuiChartsAxis-left .MuiChartsAxis-tickLabel":{
         fill:"rgba(0, 0, 0, 0.4)",
         fontSize: "12px",
