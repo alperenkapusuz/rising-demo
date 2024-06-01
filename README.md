@@ -1,6 +1,8 @@
 ## Welcome to Rising Panel
 
-First, run the development server:
+# Site Url
+[Rising Panel](https://rising-panel.vercel.app/)
+
 
 ```bash
 npm run dev
