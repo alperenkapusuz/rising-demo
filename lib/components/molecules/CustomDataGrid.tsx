@@ -88,7 +88,7 @@ const CustomDataGrid = (props: Omit<React.ComponentProps<typeof DataGrid>, 'clas
     );
 
   return (
-    <div style={{ height: 350, width: '100%' }}>
+    <div style={{ height: 370, width: '100%' }}>
       <DataGrid
         slots={{
           noRowsOverlay: CustomNoRowsOverlay,
@@ -99,22 +99,23 @@ const CustomDataGrid = (props: Omit<React.ComponentProps<typeof DataGrid>, 'clas
         disableColumnMenu
         sx={{
           border: 'none',
-            padding: 2,
-            '& .MuiDataGrid-cell': {
-              color: 'rgba(64, 64, 64, 1)',
-            },
-            '.MuiDataGrid-columnHeaders': {
-              borderRadius: '0px',
-            },
-            ' .MuiDataGrid-columnHeadersInner': {
-              borderRadius: '0px',
-            },
-            ' .MuiDataGrid-columnHeaderTitle': {
-              fontWeight: '600',
-              fontSize: '14px',
-            },
+          padding: 2,
+          '& .MuiDataGrid-cell': {
+            color: 'rgba(64, 64, 64, 1)',
+          },
+          '.MuiDataGrid-columnHeaders': {
+            borderRadius: '0px',
+          },
+          ' .MuiDataGrid-columnHeadersInner': {
+            borderRadius: '0px',
+          },
+          ' .MuiDataGrid-columnHeaderTitle': {
+            fontWeight: '600',
+            fontSize: '14px',
+          },
+          '& .coloured': { textAlign: 'center', color: '#7181AD' },
+          '& .MuiDataGrid-virtualScroller::-webkit-scrollbar': { display: 'none' },
         }}
-        
       />
     </div>
   );

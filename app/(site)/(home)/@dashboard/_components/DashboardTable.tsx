@@ -15,13 +15,13 @@ const DashboardTable = () => {
     {
       field: 'type',
       headerName: 'Type',
-      width: 150,
+      width: 120,
       sortable: false,
     },
     {
       field: 'location',
       headerName: 'Location',
-      width: 150,
+      width: 120,
       sortable: false,
     },
     {
