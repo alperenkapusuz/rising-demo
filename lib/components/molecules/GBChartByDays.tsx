@@ -19,7 +19,6 @@ const GBChartByDays = (props: GBChartByDaysProps) => {
         color: COLOR.text,
       },
     ],
-
     height: 400,
   };
 
@@ -31,11 +30,35 @@ const GBChartByDays = (props: GBChartByDaysProps) => {
   return (
     <LineChart
       {...lineChartsParams}
+      sx={{
+       "& .MuiChartsAxis-left .MuiChartsAxis-tickLabel":{
+        fill:"rgba(0, 0, 0, 0.4)",
+        fontSize: "12px",
+        fontWeight: "400",
+        fontFamily: "Inter",
+       },
+       "& .MuiChartsAxis-tickContainer .MuiChartsAxis-tickLabel":{
+           fontFamily: "Inter",
+        },
+        "& .MuiChartsAxis-bottom .MuiChartsAxis-tickLabel":{
+            strokeWidth:"0.5",
+            fill:"rgba(0, 0, 0, 0.4)",
+            fontFamily: "Inter",
+         },
+         "& .MuiChartsAxis-bottom .MuiChartsAxis-line":{
+          stroke:"rgba(0, 0, 0, 0.2)",
+         },
+         "& .MuiChartsAxis-tickContainer .MuiChartsAxis-tick": {
+          stroke: "transparent",
+         },
+         "& .MuiChartsAxis-left .MuiChartsAxis-line":{
+          stroke:"transparent",
+         }
+      }}
       xAxis={[{ data: days, scaleType: 'band' }]}
       yAxis={[
         {
           data: gbs,
-
           reverse: true,
           scaleType: 'band',
           valueFormatter: (value) => {
