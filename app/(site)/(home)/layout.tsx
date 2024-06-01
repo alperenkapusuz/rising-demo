@@ -38,6 +38,7 @@ const Layout = ({
           sx={{
             borderBottom: `1px solid ${COLOR.border_primary}`,
             mt: 3,
+            ml:2
           }}
         >
           <Container maxWidth="lg">

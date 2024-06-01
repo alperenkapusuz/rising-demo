@@ -11,7 +11,7 @@ export const metadata = {
 const page = () => {
   return (
     <Container maxWidth="lg">
-      <Stack mt={6} px={2}>
+      <Stack mt={6} px={3}>
         <Typography fontSize={'30px'} lineHeight={'40px'} fontWeight={'700'} gutterBottom>
           Proxies & Scraping Infrastructure
         </Typography>

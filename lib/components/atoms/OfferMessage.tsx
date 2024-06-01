@@ -42,6 +42,7 @@ const StickyAlert = () => {
           sx={{
             bgcolor: COLOR.message,
             fontSize: '14px',
+            mx: 2,
           }}
         >
           <Typography variant="body1" sx={{ fontWeight: '500', fontSize: '14px', color: 'black' }}>
