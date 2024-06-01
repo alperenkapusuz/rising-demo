@@ -117,7 +117,7 @@ const MobileDrawer = (props: Props) => {
 
   return (
     <React.Fragment>
-      <IconButton sx={{ position: 'absolute', top: 10, right: 10, zIndex: 999 }} onClick={toggleDrawer(true)}>
+      <IconButton sx={{ position: 'absolute', top: 10, right: 0, zIndex: 999 }} onClick={toggleDrawer(true)}>
         <MenuIcon />
       </IconButton>
       <Drawer anchor={'top'} open={open} onClose={toggleDrawer(false)}>

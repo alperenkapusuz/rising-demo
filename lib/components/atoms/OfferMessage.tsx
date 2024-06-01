@@ -30,7 +30,7 @@ const StickyAlert = () => {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ position: 'sticky', top: 0, zIndex: 999 }}>
+    <Container maxWidth="lg" sx={{ position: 'sticky', top: 0, zIndex: 998 }}>
       {alertVisible && (
         <Alert
           icon={false}
