@@ -1,14 +1,13 @@
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import React from 'react';
-//import LoginForm from './_components/LoginForm';
 import Image from 'next/image';
 import { PUBLIC_URL } from '@/lib/config/env';
 import LoginForm from './_components/LoginForm';
-//import { sharedMetadata } from '../../../shared-metadata';
+import { sharedMetadata } from '@/shared-metadata';
 
 export const metadata = {
-  title: 'Giriş Yap | Rising Panel',
-  //...sharedMetadata.openGraph,
+  title: 'Login | Rising Panel',
+  ...sharedMetadata.openGraph,
 };
 
 const page = () => {

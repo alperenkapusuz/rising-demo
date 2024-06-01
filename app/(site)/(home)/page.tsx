@@ -1,5 +1,12 @@
+import { sharedMetadata } from '@/shared-metadata';
 import { Container, Stack, Typography } from '@mui/material';
 import React from 'react';
+
+export const metadata = {
+  title: 'Home | Rising Panel',
+  ...sharedMetadata.openGraph,
+};
+
 
 const page = () => {
   return (
