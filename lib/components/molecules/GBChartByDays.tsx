@@ -56,6 +56,30 @@ const GBChartByDays = (props: GBChartByDaysProps) => {
           stroke:"transparent",
          }
       }}
+      slotProps={{
+        popper: {
+          sx: {
+            ["& .MuiChartsTooltip-mark"]: {
+              display: "none"
+            },
+            ["& .MuiChartsTooltip-labelCell"]: {
+              display: "none"
+            },
+            ["& .MuiChartsTooltip-markCell"]: {
+              display: "none",
+            },
+            ["& .MuiChartsTooltip-table"]: {
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              padding: 0,
+            },
+            ["& .MuiChartsTooltip-valueCell"]: {
+              padding: 0,
+            },
+          },
+        },
+      }}
       xAxis={[{ data: days, scaleType: 'band' }]}
       yAxis={[
         {
