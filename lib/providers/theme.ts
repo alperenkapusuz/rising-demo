@@ -1,9 +1,15 @@
 'use client';
-import { Hanken_Grotesk } from 'next/font/google';
+import { Hanken_Grotesk, IBM_Plex_Sans } from 'next/font/google';
 import { createTheme } from '@mui/material/styles';
 
-const HKGrotesk = Hanken_Grotesk({
+export const HKGrotesk = Hanken_Grotesk({
   weight: ['300', '400', '500', '700', '900'],
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+export const IBMPlexSans = IBM_Plex_Sans({
+  weight: ['500'],
   subsets: ['latin'],
   display: 'swap',
 });

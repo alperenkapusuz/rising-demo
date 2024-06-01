@@ -102,18 +102,24 @@ const CustomDataGrid = (props: Omit<React.ComponentProps<typeof DataGrid>, 'clas
           padding: 2,
           '& .MuiDataGrid-cell': {
             color: 'rgba(64, 64, 64, 1)',
+            borderTop: 0,
+            borderBottom: '1px solid rgba(236, 236, 236, 1)',
           },
           '.MuiDataGrid-columnHeaders': {
             borderRadius: '0px',
+            borderBottom: 0,
+          },
+          '.MuiDataGrid-withBorderColor': {
+            borderBottom: 0,
           },
           ' .MuiDataGrid-columnHeadersInner': {
             borderRadius: '0px',
+            borderBottom: 0,
           },
           ' .MuiDataGrid-columnHeaderTitle': {
             fontWeight: '600',
             fontSize: '14px',
           },
-          '& .coloured': { textAlign: 'center', color: '#7181AD' },
           '& .MuiDataGrid-virtualScroller::-webkit-scrollbar': { display: 'none' },
         }}
       />
