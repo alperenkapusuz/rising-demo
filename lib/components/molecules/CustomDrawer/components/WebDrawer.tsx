@@ -8,8 +8,7 @@ import { COLOR } from '@/lib/constants/color';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { IconButton } from '@mui/material';
 import Image from 'next/image';
-import { PUBLIC_URL } from '@/lib/config/env';
-
+import rising_logo from '@/public/rising-logo.webp';
 import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation';
 
@@ -79,7 +78,7 @@ const WebDrawer = (props: Props) => {
       >
         <IconButton onClick={() => router.push('/')}>
           <Image
-            src={`${PUBLIC_URL}/rising-logo.webp`}
+            src={rising_logo}
             alt="rising-logo"
             width={50}
             height={50}

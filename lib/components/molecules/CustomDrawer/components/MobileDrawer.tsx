@@ -5,8 +5,8 @@ import { usePathname, useRouter } from 'next/navigation';
 import { COLOR } from '@/lib/constants/color';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Image from 'next/image';
-import { PUBLIC_URL } from '@/lib/config/env';
 import MenuIcon from '@mui/icons-material/Menu';
+import rising_logo from '@/public/rising-logo.webp';
 
 type Props = {
   exit: boolean;
@@ -50,7 +50,7 @@ const MobileDrawer = (props: Props) => {
       >
         <IconButton onClick={() => router.push('/')}>
           <Image
-            src={`${PUBLIC_URL}/rising-logo.webp`}
+            src={rising_logo}
             alt="rising-logo"
             width={50}
             height={50}

@@ -8,10 +8,8 @@ dotenv.config({
 const nextConfig = {
     env: {
         API_URL: process.env.API_URL,
-        PUBLIC_URL: process.env.PUBLIC_URL,
     },
     images: {
-      domains: [process.env.PUBLIC_URL],
       unoptimized: true,
     },
     output: "standalone",
