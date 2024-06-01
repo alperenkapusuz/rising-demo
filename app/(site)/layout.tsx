@@ -1,7 +1,7 @@
 "use client"
 import { Box } from "@mui/material";
 import React from "react";
-import Drawer from "@/lib/components/molecules/Drawer";
+import CustomDrawer from "@/lib/components/molecules/CustomDrawer"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
 
@@ -16,7 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           overflow: "auto",
         }}
       >
-        <Drawer>{children}</Drawer>
+        <CustomDrawer>{children}</CustomDrawer>
       </Box>
     </React.Fragment>
   );

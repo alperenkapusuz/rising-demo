@@ -25,14 +25,12 @@ const DEFAULT_COLOR = COLOR.text;
 const StyledDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(3),
-    width: 435,
     display: 'flex',
     alignItems: 'center',
     margin: '0 auto',
   },
   '& .MuiDialogActions-root': {
-    padding: theme.spacing(1),
-    width: 460,
+    padding: theme.spacing(3),
     marginTop: 20,
   },
 }));
@@ -186,17 +184,17 @@ const ConfirmModal = (props: Props) => {
         )}
         <DialogActions>
           {modalType === 'TIMEOUT' ? (
-            <CustomButton title="Tamam" onClick={handleAction} style={{ minWidth: '120px' }} />
+            <CustomButton title="Okey" onClick={handleAction} style={{ minWidth: '120px' }} />
           ) : (
             <>
               <CustomButton
-                title="Devam et"
+                title="Continue"
                 variant="contained"
                 onClick={handleAction}
                 style={{ minWidth: '120px' }}
                 color={handleButtonColor(modalType)}
               >
-                {props.buttonText || 'Devam et'}
+                {props.buttonText || 'Continue'}
               </CustomButton>
             </>
           )}
